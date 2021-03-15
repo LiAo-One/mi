@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.SzzwTillDrugMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.SzzwTillDrug">
+        <id column="drug_id" property="drugId"/>
+        <result column="household_num" property="householdNum"/>
+        <result column="drug_register_num" property="drugRegisterNum"/>
+        <result column="drug_comment_name" property="drugCommentName"/>
+        <result column="used_drug_time" property="usedDrugTime"/>
+        <result column="used_drug_crop" property="usedDrugCrop"/>
+        <result column="drug_pest" property="drugPest"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="current_timestamp" property="currentTimestamp"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        drug_id, household_num, drug_register_num, drug_comment_name, used_drug_time, used_drug_crop, drug_pest, version, deleted, create_time, update_time, current_timestamp
+    </sql>
+
+</mapper>

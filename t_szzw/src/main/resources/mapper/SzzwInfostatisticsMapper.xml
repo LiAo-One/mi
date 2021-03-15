@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.SzzwInfostatisticsMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.SzzwInfostatistics">
+        <id column="statistics_id" property="statisticsId"/>
+        <result column="statisticsname" property="statisticsname"/>
+        <result column="statisticsnum" property="statisticsnum"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="timeinfo" property="timeinfo"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        statistics_id, statisticsname, statisticsnum, version, deleted, create_time, update_time, timeinfo
+    </sql>
+
+</mapper>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.system.dao.SysUserMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.system.entity.SysUser">
+        <id column="user_id" property="userId"/>
+        <result column="user_account" property="userAccount"/>
+        <result column="user_password" property="userPassword"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="user_nickname" property="userNickname"/>
+        <result column="user_avatar" property="userAvatar"/>
+        <result column="user_email" property="userEmail"/>
+        <result column="user_phon" property="userPhon"/>
+        <result column="user_protection" property="userProtection"/>
+        <result column="user_certification" property="userCertification"/>
+        <result column="user_remarks" property="userRemarks"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="login_time" property="loginTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        user_id, user_account, user_password, user_name, user_sex, user_nickname, user_avatar, user_email, user_phon, user_protection, user_certification, user_remarks, version, deleted, login_time, create_time, update_time
+    </sql>
+
+</mapper>

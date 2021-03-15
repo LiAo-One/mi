@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.SzzwPlantingmapMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.SzzwPlantingmap">
+        <id column="plantingmap_id" property="plantingmapId"/>
+        <result column="plantingmap_nameoflandmark" property="plantingmapNameoflandmark"/>
+        <result column="plantingmap_landmarksubone" property="plantingmapLandmarksubone"/>
+        <result column="plantingmap_landmarksubtwo" property="plantingmapLandmarksubtwo"/>
+        <result column="plantingmap_landmarksubthree" property="plantingmapLandmarksubthree"/>
+        <result column="plantingmap_landmarksubfour" property="plantingmapLandmarksubfour"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="timeinfo" property="timeinfo"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        plantingmap_id, plantingmap_nameoflandmark, plantingmap_landmarksubone, plantingmap_landmarksubtwo, plantingmap_landmarksubthree, plantingmap_landmarksubfour, version, deleted, create_time, update_time, timeinfo
+    </sql>
+
+</mapper>

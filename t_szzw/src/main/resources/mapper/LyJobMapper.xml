@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.LyJobMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.LyJob">
+        <id column="job_id" property="jobId"/>
+        <result column="job_userid" property="jobUserid"/>
+        <result column="job_name" property="jobName"/>
+        <result column="job_perceive_id" property="jobPerceiveId"/>
+        <result column="job_perceive_name" property="jobPerceiveName"/>
+        <result column="job_hvalue" property="jobHvalue"/>
+        <result column="job_lvalue" property="jobLvalue"/>
+        <result column="job_hstrategy" property="jobHstrategy"/>
+        <result column="job_lstrategy" property="jobLstrategy"/>
+        <result column="job_dev" property="jobDev"/>
+        <result column="job_dev_name" property="jobDevName"/>
+        <result column="status" property="status"/>
+        <result column="deleted" property="deleted"/>
+        <result column="version" property="version"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        job_id, job_userid, job_name, job_perceive_id, job_perceive_name, job_hvalue, job_lvalue, job_hstrategy, job_lstrategy, job_dev, job_dev_name, status, deleted, version, create_time, update_time
+    </sql>
+
+</mapper>

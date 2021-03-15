@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.view.dao.ViewBodyGoodsdataMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.view.entity.ViewBodyGoodsdata">
+        <id column="bodyd_id" property="bodydId"/>
+        <result column="bodyt_id" property="bodytId"/>
+        <result column="bodyt_type_id" property="bodytTypeId"/>
+        <result column="bodyd_order" property="bodydOrder"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_images" property="goodsImages"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="bodyd_now_price" property="bodydNowPrice"/>
+        <result column="bodyd_old_price" property="bodydOldPrice"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        bodyd_id, bodyt_id, bodyt_type_id, bodyd_order, goods_id, goods_images, goods_name, bodyd_now_price, bodyd_old_price, version, deleted, create_time, update_time
+    </sql>
+
+</mapper>

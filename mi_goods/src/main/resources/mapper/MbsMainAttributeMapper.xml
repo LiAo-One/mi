@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsMainAttributeMapper">
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsMainAttribute">
+        <id column="mattribute_id" property="mattributeId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="attributes_name" property="attributesName"/>
+        <result column="mattribute_price" property="mattributePrice"/>
+        <result column="main_quantity" property="mainQuantity"/>
+        <result column="mattribute_order" property="mattributeOrder"/>
+        <result column="version" property="version"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <resultMap id="MbsFromAttributeBaseResultMap" type="com.liao.goods.entity.MbsMainAttribute" extends="BaseResultMap">
+        <collection property="fromAttributes" ofType="com.liao.goods.entity.MbsFromAttribute"
+                    resultMap="com.liao.goods.dao.MbsFromAttributeMapper.BaseResultMap"
+        />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        mattribute_id, goods_id, goods_name, mattribute_price, mattribute_order, version, create_time, update_time
+    </sql>
+
+    <!--根据商品id清空一级属性-->
+    <delete id="deletedMbsMainAttributeByGoodsId" parameterType="java.lang.Long">
+        DELETE
+        FROM mbs_main_attribute
+        WHERE goods_id = #{goodsId}
+    </delete>
+</mapper>

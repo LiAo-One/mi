@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsFromAttributeMapper">
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsFromAttribute">
+        <id column="fattribute_id" property="fattributeId"/>
+        <result column="mattribute_id" property="mattributeId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="from_name" property="fromName"/>
+        <result column="fattribute_price" property="fattributePrice"/>
+        <result column="from_quantity" property="fromQuantity"/>
+        <result column="fattribute_order" property="fattributeOrder"/>
+        <result column="version" property="version"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        fattribute_id, mattribute_id, goods_id, goods_name, fattribute_price, fattribute_order, version, create_time, update_time
+    </sql>
+
+    <!--根据商品id清空二级属性-->
+    <delete id="deletedMbsFromAttributeByGoodsId">
+        DELETE
+        FROM mbs_from_attribute
+        WHERE goods_id = #{goodsId}
+    </delete>
+</mapper>

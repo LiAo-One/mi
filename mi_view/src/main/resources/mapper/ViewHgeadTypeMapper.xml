@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.view.dao.ViewHgeadTypeMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.view.entity.ViewHgeadType">
+        <id column="hgeady_id" property="hgeadyId"/>
+        <result column="hgeady_title" property="hgeadyTitle"/>
+        <result column="hgeady_order" property="hgeadyOrder"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        hgeady_id, hgeady_title, hgeady_order, version, deleted, create_time, update_time
+    </sql>
+
+</mapper>

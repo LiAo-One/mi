@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsGoodsMapper">
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsGoods">
+        <id column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="goods_title" property="goodsTitle"/>
+        <result column="goods_now_price" property="goodsNowPrice"/>
+        <result column="goods_old_price" property="goodsOldPrice"/>
+        <result column="goods_depict" property="goodsDepict"/>
+        <result column="goods_main_picture" property="goodsMainPicture"/>
+        <result column="goods_main_attributes" property="goodsMainAttributes"/>
+        <result column="goods_from_attribute" property="goodsFromAttribute"/>
+        <result column="goods_parameter_way" property="goodsParameterWay"/>
+        <result column="goods_accident" property="goodsAccident"/>
+        <result column="goods_warranty" property="goodsWarranty"/>
+        <result column="goods_cloud_service" property="goodsCloudService"/>
+        <result column="goods_spike" property="goodsSpike"/>
+        <result column="goods_giveaway" property="goodsGiveaway"/>
+        <result column="goods_free_shipping" property="goodsFreeShipping"/>
+        <result column="version" property="version"/>
+        <result column="delete" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <!--图片集合-->
+    <resultMap id="GoodsImagesBaseResultMap" type="com.liao.goods.entity.MbsGoods" extends="BaseResultMap">
+        <collection property="goodsImages" resultMap="com.liao.goods.dao.MbsGoodsImagesMapper.BaseResultMap"/>
+    </resultMap>
+
+    <!--一级属性-->
+    <resultMap id="MbsMainAttributeBaseResultMap" type="com.liao.goods.entity.MbsGoods"
+               extends="GoodsImagesBaseResultMap">
+        <!--二级属性-->
+        <collection property="attributes" ofType="com.liao.goods.entity.MbsMainAttribute"
+                    resultMap="com.liao.goods.dao.MbsMainAttributeMapper.MbsFromAttributeBaseResultMap">
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        goods_id, goods_name, goods_title, goods_now_price, goods_old_price, goods_depict, goods_main_picture, goods_main_attributes, goods_from_attribute, goods_parameter_way, goods_accident, goods_warranty, goods_cloud_service, goods_spike, goods_giveaway, goods_free_shipping, version, deleted, create_time, update_time
+    </sql>
+
+    <!--根据ID联查商品信息-->
+    <select id="selectByGoodsId" resultMap="MbsMainAttributeBaseResultMap">
+        SELECT g.goods_id,
+               g.goods_name,
+               g.goods_title,
+               g.goods_now_price,
+               g.goods_old_price,
+               g.goods_depict,
+               g.goods_main_picture,
+               g.goods_main_attributes,
+               g.goods_from_attribute,
+               g.goods_parameter_way,
+               g.goods_accident,
+               g.goods_warranty,
+               g.goods_cloud_service,
+               g.goods_spike,
+               g.goods_giveaway,
+               g.goods_free_shipping,
+               g.create_time,
+               g.update_time,
+               gm.image_id,
+               gm.goods_id,
+               gm.image_linke,
+               gm.creater_time,
+
+               ma.mattribute_id,
+               ma.goods_id,
+               ma.goods_name,
+               ma.attributes_name,
+               ma.main_quantity,
+               ma.mattribute_price,
+               ma.mattribute_order,
+
+               fa.fattribute_id,
+               fa.mattribute_id,
+               fa.goods_id,
+               fa.goods_name,
+               fa.from_name,
+               fa.fattribute_price,
+               fa.from_quantity,
+               fa.fattribute_order
+        FROM mbs_goods g
+                     LEFT JOIN mbs_goods_images gm
+                ON g.goods_id = gm.goods_id
+                     LEFT JOIN mbs_main_attribute ma
+                ON g.goods_id = ma.goods_id
+                     LEFT JOIN mbs_from_attribute fa
+                ON g.goods_id = fa.goods_id
+        WHERE g.deleted = 0
+          AND g.goods_id = #{id}
+    </select>
+</mapper>
+
+        <!--二级属性-->
+        <!--
+        <collection property="fromAttributes" ofType="com.liao.goods.entity.MbsFromAttribute"
+                    resultMap="com.liao.goods.dao.MbsFromAttributeMapper.BaseResultMap"/>-->

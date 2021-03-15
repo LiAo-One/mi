@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsDescribeMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsDescribe">
+        <id column="describe_id" property="describeId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="goods_title" property="goodsTitle"/>
+        <result column="describe_now_price" property="describeNowPrice"/>
+        <result column="describe_old_price" property="describeOldPrice"/>
+        <result column="describe_start_time" property="describeStartTime"/>
+        <result column="describe_stop_time" property="describeStopTime"/>
+        <result column="describe_continued_time" property="describeContinuedTime"/>
+        <result column="home_show_off" property="homeShowOff"/>
+        <result column="describe_order" property="describeOrder"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        describe_id, goods_id, goods_name, goods_title, describe_now_price, describe_old_price, describe_start_time, describe_stop_time, describe_continued_time, home_show_off, describe_order, version, deleted, create_time, update_time
+    </sql>
+
+</mapper>

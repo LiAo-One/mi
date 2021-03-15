@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.SzzwMapdisplayMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.SzzwMapdisplay">
+        <id column="mapdisplay_id" property="mapdisplayId"/>
+        <result column="districtname" property="districtname"/>
+        <result column="map_longitude" property="mapLongitude"/>
+        <result column="map_latitude" property="mapLatitude"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="timeinfo" property="timeinfo"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        mapdisplay_id, districtname, map_longitude, map_latitude, version, deleted, create_time, update_time, timeinfo
+    </sql>
+
+</mapper>

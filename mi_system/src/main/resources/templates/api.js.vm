@@ -1,0 +1,50 @@
+import {service_view} from '@/utils/request'
+
+// 查询用户列表
+export function list${className}(query) {
+    return service_view({
+        url: '${tableName}/sel_page',
+        method: 'post',
+        params: query
+    })
+}
+
+// 查询用户详细
+export function get${className}(id) {
+    return service_view({
+        url: '/${tableName}/sel_id',
+        method: 'post',
+        params: {
+            id
+        }
+    })
+}
+
+// 修改用户
+export function update${className}(data) {
+    return service_view({
+        url: '/${tableName}/upd_id',
+        method: 'post',
+        params: data
+    })
+}
+
+// 添加用户
+export function add${className}(data) {
+    return service_view({
+        url: '${tableName}/add',
+        method: 'post',
+        params: data
+    })
+}
+
+// 删除用户
+export function delete${className}(ids) {
+    return service_view({
+        url: '${tableName}/del_ids',
+        method: 'post',
+        params: {
+            ids
+        }
+    })
+}

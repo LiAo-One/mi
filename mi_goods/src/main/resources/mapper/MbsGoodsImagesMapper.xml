@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsGoodsImagesMapper">
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsGoodsImages">
+        <id column="image_id" property="imageId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="image_linke" property="imageLinke"/>
+        <result column="creater_time" property="createrTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        image_id, goods_id, image_linke, creater_time
+    </sql>
+
+    <!--清空商品图片缓存-->
+    <delete id="deletedGoodsImagesByGoodsId" parameterType="java.lang.Long">
+        DELETE
+        FROM mbs_goods_images
+        WHERE goods_id = #{goodsId}
+    </delete>
+</mapper>

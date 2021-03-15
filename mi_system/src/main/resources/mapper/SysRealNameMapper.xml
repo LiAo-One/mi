@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.system.dao.SysRealNameMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.system.entity.SysRealName">
+        <id column="rn_id" property="rnId"/>
+        <result column="rn_u_id" property="rnUId"/>
+        <result column="rn_name" property="rnName"/>
+        <result column="rn_sex" property="rnSex"/>
+        <result column="rm_born_date" property="rmBornDate"/>
+        <result column="rm_id_card" property="rmIdCard"/>
+        <result column="rm_positive" property="rmPositive"/>
+        <result column="rm_negative" property="rmNegative"/>
+        <result column="rm_mechanism" property="rmMechanism"/>
+        <result column="rm_Issue_date" property="rmIssueDate"/>
+        <result column="rm_maturity_date" property="rmMaturityDate"/>
+        <result column="vsersion" property="vsersion"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        rn_id, rn_u_id, rn_name, rn_sex, rm_born_date, rm_id_card, rm_positive, rm_negative, rm_mechanism, rm_Issue_date, rm_maturity_date, vsersion, deleted, create_time, update_time
+    </sql>
+
+</mapper>

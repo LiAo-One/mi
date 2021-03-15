@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liao.goods.dao.MbsGiveawayMapper">
+
+    <resultMap id="BaseResultMap" type="com.liao.goods.entity.MbsGiveaway">
+        <id column="giveaway_id" property="giveawayId"/>
+        <result column="goods_id" property="goodsId"/>
+        <result column="goods_name" property="goodsName"/>
+        <result column="goods_images_link" property="goodsImagesLink"/>
+        <result column="giveaway_remarks" property="giveawayRemarks"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        giveaway_id, goods_id, goods_name, goods_images_link, giveaway_remarks, version, deleted, create_time, update_time
+    </sql>
+
+</mapper>

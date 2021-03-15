@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.longyuan.dao.SzzwStospMapper">
+
+    <resultMap id="BaseResultMap" type="com.longyuan.entity.SzzwStosp">
+        <id column="stosp_id" property="stospId"/>
+        <result column="stosp_region" property="stospRegion"/>
+        <result column="stosp_entryname" property="stospEntryname"/>
+        <result column="stosp_projectcontent" property="stospProjectcontent"/>
+        <result column="stosp_projecttype" property="stospProjecttype"/>
+        <result column="stosp_noc" property="stospNoc"/>
+        <result column="stosp_investment" property="stospInvestment"/>
+        <result column="stosp_constructionstartyear" property="stospConstructionstartyear"/>
+        <result column="stosp_yococ" property="stospYococ"/>
+        <result column="stosp_constructionprogress" property="stospConstructionprogress"/>
+        <result column="stosp_completedinvestment" property="stospCompletedinvestment"/>
+        <result column="stosp_aiacctia" property="stospAiacctia"/>
+        <result column="stosp_constructionsite" property="stospConstructionsite"/>
+        <result column="stosp_platn" property="stospPlatn"/>
+        <result column="stosp_cpatnopp" property="stospCpatnopp"/>
+        <result column="version" property="version"/>
+        <result column="deleted" property="deleted"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="timeinfo" property="timeinfo"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        stosp_id, stosp_region, stosp_entryname, stosp_projectcontent, stosp_projecttype, stosp_noc, stosp_investment, stosp_constructionstartyear, stosp_yococ, stosp_constructionprogress, stosp_completedinvestment, stosp_aiacctia, stosp_constructionsite, stosp_platn, stosp_cpatnopp, version, deleted, create_time, update_time, timeinfo
+    </sql>
+
+</mapper>
