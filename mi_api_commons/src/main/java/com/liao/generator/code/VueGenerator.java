@@ -1,3 +1,5 @@
+package com.liao.generator.code;
+
 import com.liao.commons.utils.StringUtils;
 import com.liao.generator.config.GenConfig;
 import com.liao.generator.entity.GenTableColumn;
@@ -13,16 +15,46 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+
+/**
+ * <p>
+ * Vue 生成
+ * </p>
+ *
+ * @author LiAo
+ * @since 2021/3/16
+ */
 public class VueGenerator {
+    // 数据库名称
+    public static String database;
+    // 主机地址
+    public static String host;
+    // 端口号
+    public static String port;
+    // 数据库用户名
+    public static String username;
+    // 用户密码
+    public static String password;
+    // 表名
+    public static String[] tableNmae;
+
+    public VueGenerator(String database, String host, String port, String username, String password, String[] tableNmae) {
+        VueGenerator.database = database;
+        VueGenerator.host = host;
+        VueGenerator.port = port;
+        VueGenerator.username = username;
+        VueGenerator.password = password;
+        VueGenerator.tableNmae = tableNmae;
+    }
 
     //获取数据库连接
     public static Connection getConnection() {
         Connection conn = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String url = "jdbc:mysql://581d934d308eb.gz.cdb.myqcloud.com:6874/lyzhny_main?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8";
-            String user = "lyzhny_main123";
-            String pass = "lyzhny_main123";
+            String url = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8";
+            String user = username;
+            String pass = password;
             conn = DriverManager.getConnection(url, user, pass);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -35,7 +67,6 @@ public class VueGenerator {
 
     /**
      * 获取某表数据及信息
-     *
      */
     public void VueTest(String[] tables) {
 
@@ -56,8 +87,7 @@ public class VueGenerator {
             throw new RuntimeException(e);
         }
         /**/
-        String[] templates = new String[]{"templates/api.js.vm","templates/index.vue.vm"};
-
+        String[] templates = new String[]{"templates/api.js.vm", "templates/index.vue.vm"};
 
 
         List<GenConfig> genConfig = getGenConfig(tables);
@@ -98,8 +128,8 @@ public class VueGenerator {
         List<GenConfig> genConfigs = new ArrayList<>();
         for (String table : tables) {
             GenConfig genConfig = new GenConfig();
-            getTableData(genConfig, "lyzhny_main", table);
-            getGenConfig(genConfig.getColumns(), "lyzhny_main", table);
+            getTableData(genConfig, database, table);
+            getGenConfig(genConfig.getColumns(), database, table);
             genConfigs.add(genConfig);
         }
 

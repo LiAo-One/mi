@@ -1,3 +1,5 @@
+package com.liao.generator.code;
+
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.IdType;
@@ -24,12 +26,23 @@ import java.util.List;
  */
 public class Generator {
 
+    // 数据库名称
+    public static String database = "mi";
+    // 主机地址
+    public static String host = "localhost";
+    // 端口号
+    public static String port = "3306";
+    // 数据库用户名
+    public static String username = "root";
+    // 用户密码
+    public static String password = "liao";
+    // 表名
+    public static String[] tableNmae = new String[]{"sys_admin"};
+
+
     public static void main(String[] args) {
         // Vue 代码生成器
-        VueGenerator vueGenerator = new VueGenerator();
-
-        String[] tableNmae = new String[]{"perceive"};
-
+        VueGenerator vueGenerator = new VueGenerator(database, host, port, username, password, tableNmae);
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
         // 全局配置
@@ -55,11 +68,11 @@ public class Generator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://581d934d308eb.gz.cdb.myqcloud.com:6874/lyzhny_main?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8");
+        dsc.setUrl("jdbc:mysql://" + host + ":" + port + "/" + database + "?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
-        dsc.setUsername("lyzhny_main123");
-        dsc.setPassword("lyzhny_main123");
+        dsc.setUsername(username);
+        dsc.setPassword(password);
         dsc.setDbType(DbType.MYSQL);
         mpg.setDataSource(dsc);
 

@@ -13,7 +13,6 @@
         <module>mi_system</module>
         <module>mi_api_commons</module>
         <module>mi_goods</module>
-        <module>t_szzw</module>
     </modules>
 
     <packaging>pom</packaging>

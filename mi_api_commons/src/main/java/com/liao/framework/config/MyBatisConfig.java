@@ -20,7 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @since 2020/12/14
  */
 @Configuration
-@MapperScan({"com.liao.*.dao","com.liao.commons.*.dao","com.longyuan.dao","com.liao.view.*.dao"})
+@MapperScan({"com.liao.*.dao", "com.liao.commons.*.dao", "com.liao.view.dao"})
 @EnableTransactionManagement
 public class MyBatisConfig {
 
@@ -28,7 +28,6 @@ public class MyBatisConfig {
     public OptimisticLockerInterceptor optimisticLockerInterceptor() {
         return new OptimisticLockerInterceptor();
     }
-
 
 
     @Bean
@@ -45,16 +44,16 @@ public class MyBatisConfig {
 
 
     @Bean
-    public ISqlInjector sqlInjector(){
+    public ISqlInjector sqlInjector() {
         return new LogicSqlInjector();
     }
 
     /**
-     *sQL执行效率插件
+     * sQL执行效率插件
      */
     @Bean
-    @Profile({"dev","test"})//设置 dev test 环境开启，保证效率
-    public PerformanceInterceptor performanceInterceptor(){
+    @Profile({"dev", "test"})//设置 dev test 环境开启，保证效率
+    public PerformanceInterceptor performanceInterceptor() {
         PerformanceInterceptor interceptor = new PerformanceInterceptor();
 
         // SQL 最大执行时间 如果超过了则不执行
