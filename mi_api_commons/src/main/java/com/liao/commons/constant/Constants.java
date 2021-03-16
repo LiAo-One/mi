@@ -42,4 +42,13 @@ public class Constants {
 
     // Redis Token 设置过期时间 7天
     public static final long EXPIRE_DATE = 60 * 60 * 24 * 7;
+
+    // token
+    public static final String SIGNATURE_VALIDATION = "token";
+
+    // timeInfo
+    public static final String TIME_INFO = "timeInfo";
+
+    // 接口校验秘钥
+    public static final String SECRET = "c353fdcac26c4035bdb123c6d8f2e2b1";
 }
