@@ -27,18 +27,17 @@ import java.util.List;
 public class Generator {
 
     // 数据库名称
-    public static String database = "mi";
+    public static String database = "lyzhny_main";
     // 主机地址
-    public static String host = "localhost";
+    public static String host = "581d934d308eb.gz.cdb.myqcloud.com";
     // 端口号
-    public static String port = "3306";
+    public static String port = "6874";
     // 数据库用户名
-    public static String username = "root";
+    public static String username = "lyzhny_main123";
     // 用户密码
-    public static String password = "liao";
+    public static String password = "lyzhny_main123";
     // 表名
-    public static String[] tableNmae = new String[]{"sys_admin"};
-
+    public static String[] tableNmae = new String[]{"ly_gate", "ly_reg", "perceive"};
 
     public static void main(String[] args) {
         // Vue 代码生成器

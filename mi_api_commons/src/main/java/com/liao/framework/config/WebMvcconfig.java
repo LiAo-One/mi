@@ -4,6 +4,7 @@ import com.liao.commons.core.text.Convert;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.convert.converter.Converter;
 import org.springframework.core.convert.support.GenericConversionService;
 import org.springframework.web.bind.support.ConfigurableWebBindingInitializer;
 import org.springframework.web.cors.CorsConfiguration;
@@ -53,7 +54,7 @@ public class WebMvcconfig {
         ConfigurableWebBindingInitializer initializer = (ConfigurableWebBindingInitializer) handlerAdapter.getWebBindingInitializer();
         if (initializer.getConversionService() != null) {
             GenericConversionService genericConversionService = (GenericConversionService) initializer.getConversionService();
-            genericConversionService.addConverter(new Convert());
+            genericConversionService.addConverter((Converter<?, ?>) new Convert());
         }
     }
 }
